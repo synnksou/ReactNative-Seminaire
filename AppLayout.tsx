@@ -21,7 +21,7 @@ const AppLayout = ({ title, children, withFooter = false }: Props) => {
       <ScrollView style={styles.container}>
         <Headline style={styles.headerText}>{title}</Headline>
         {children}
-        <FeedScreen />
+
 
         {withFooter && <View style={styles.footer} />}
       </ScrollView>

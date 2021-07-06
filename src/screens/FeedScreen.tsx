@@ -2,7 +2,6 @@ import React from "react";
 import {
   SafeAreaView,
   StyleSheet,
-  Text,
   StatusBar,
   View,
   FlatList,
@@ -11,15 +10,14 @@ import CardItem from "../components/cardItem";
 import { useStarships } from "../lib/useStartShip";
 
 const App = () => {
-  const data = useStarships().data;
+  const data = useStarships();
 
-
+  
   return (
-
     <SafeAreaView style={styles.safeContainer}>
       <View style={styles.container}>
         <FlatList
-          data={data.results}
+          data={data.data.results}
           renderItem={({ item }) => {
             return (
               <CardItem
