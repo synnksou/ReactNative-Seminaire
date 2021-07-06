@@ -7,13 +7,13 @@ import FeedScreen from "./src/screens/FeedScreen";
 
 export default function App() {
   return (
-    <ProviderOffline>
+  //  <ProviderOffline>  
       <DataProvider>
         <AppLayout title={"StarShip"}>
           <FeedScreen />
         </AppLayout>
       </DataProvider>
-    </ProviderOffline>
+  //  </ProviderOffline>
   );
 }
 

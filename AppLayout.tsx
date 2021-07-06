@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     paddingTop: 24,
     paddingLeft: 24,
     paddingRight: 24,
-    backgroundColor: Colors.grey200,
+    backgroundColor: "#fafafa",
     marginTop: 36,
   },
   headerText: {

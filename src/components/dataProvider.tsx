@@ -4,7 +4,7 @@ import React, { ReactElement } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 interface Props {
-  children: ReactElement;
+  children: ReactElement | ReactElement[];
 }
 
 const DataProvider = ({ children }: Props) => {

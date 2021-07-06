@@ -5,19 +5,29 @@ import {
   StatusBar,
   View,
   FlatList,
+  Text,
 } from "react-native";
 import CardItem from "../components/cardItem";
+import {ActivityIndicator,Colors} from 'react-native-paper'
 import { useStarships } from "../lib/useStartShip";
 
 const App = () => {
-  const data = useStarships();
+  const { data, error, isLoading } = useStarships();
+  if (isLoading)
+    return (
+      <View>
+        <Text>Loading</Text>
+        <ActivityIndicator animating={true} color={Colors.red800} />
+      </View>
+    );
 
-  
+  if (error) return <Text> An error has occurred: {error.message} </Text>;
+
   return (
     <SafeAreaView style={styles.safeContainer}>
       <View style={styles.container}>
         <FlatList
-          data={data.data.results}
+          data={data.results}
           renderItem={({ item }) => {
             return (
               <CardItem
