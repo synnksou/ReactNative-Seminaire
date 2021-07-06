@@ -1,6 +1,4 @@
 import React, { ReactElement } from "react";
-
-
 import { QueryClient, QueryClientProvider } from "react-query";
 
 interface Props {

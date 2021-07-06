@@ -21,7 +21,7 @@ const App = () => {
       </View>
     );
 
-  if (error) return <Text> An error has occurred: {error.message} </Text>;
+  if (error) return <Text> An error has occurred: </Text>;
 
   return (
     <SafeAreaView style={styles.safeContainer}>
@@ -32,7 +32,6 @@ const App = () => {
             return (
               <CardItem
                 name={item.name}
-                model={item.model}
                 manufacturer={item.manufacturer}
                 cost_in_credits={item.cost_in_credits}
                 hyperdrive_rating={item.hyperdrive_rating}
