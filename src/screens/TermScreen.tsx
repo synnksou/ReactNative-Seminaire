@@ -1,18 +1,23 @@
 import React from "react";
 import { View, Text, Image, ScrollView } from "react-native";
 import { Appbar } from "react-native-paper";
+import { AppRoute } from "./../navigation/AppRoute";
 
 // We need to use this props screen `{navigation}`
-const TermsScreen = () => {
+const TermsScreen = ({navigation} : any) => {
   function goBack() {
     // We need to use this props screen `{navigation}`
     alert("goBack pressed!");
   }
 
+  function handleLogin() {
+    navigation.navigate(AppRoute.LOGIN_SCREEN);
+  }
+
   return (
     <View>
       <Appbar.Header>
-        <Appbar.BackAction onPress={goBack} />
+        <Appbar.BackAction onPress={handleLogin} />
         <Appbar.Content title="Terms and Conditions" />
       </Appbar.Header>
       <ScrollView style={{ padding: 32 }}>

@@ -9,7 +9,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 
 interface Props {
   title: string;
-  children?: ReactNode;
+  children?: ReactNode | ReactNode [];
   withFooter?: boolean;
 }
 

@@ -3,14 +3,14 @@ import { NetworkProvider, NetworkConsumer } from "react-native-offline";
 import Offline from "../../Offline";
 
 interface Props {
-  children: ReactElement;
+  children: ReactElement | ReactElement[];
 }
 
 const providerOflline = ({ children }: Props) => {
   return (
     <NetworkProvider>
       <NetworkConsumer>
-        {({ isConnected }) => (!isConnected ? <Offline /> : { children })}
+        {({ isConnected }) => (!isConnected ? <Offline /> : <>{ children }</>)}
       </NetworkConsumer>
     </NetworkProvider>
   );

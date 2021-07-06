@@ -10,8 +10,9 @@ import {
 import CardItem from "../components/cardItem";
 import {ActivityIndicator,Colors} from 'react-native-paper'
 import { useStarships } from "../lib/useStartShip";
+import { AppRoute } from "./../navigation/AppRoute";
 
-const App = () => {
+const App = ({navigation} : any ) => {
   const { data, error, isLoading } = useStarships();
   if (isLoading)
     return (
@@ -22,6 +23,11 @@ const App = () => {
     );
 
   if (error) return <Text> An error has occurred: </Text>;
+
+  function handleLogin() {
+    navigation.navigate(AppRoute.LOGIN_SCREEN);
+  }
+
 
   return (
     <SafeAreaView style={styles.safeContainer}>
