@@ -1,21 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import DataProvider from "./src/components/dataProvider";
+import ProviderOffline from "./src/components/providerOflline";
+import StorybookUIRoot from "./storybook";
+import { NavigationContainer } from "@react-navigation/native";
+import AppLayout from "./AppLayout";
+import Navigator from "./src/navigation/Navigator";
+
+//const SHOW_STORYBOOK = false;
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ProviderOffline>
+      <DataProvider>
+      {/* <AppLayout title={"StarShip"}> */}
+          <NavigationContainer>
+            <Navigator />
+          </NavigationContainer>
+          {/*</AppLayout>*/}
+      </DataProvider>
+    </ProviderOffline>
   );
 }
+/*
+const UI = SHOW_STORYBOOK && __DEV__ ? StorybookUIRoot : App;
+export default UI;
+*/
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+/*
+<QueryClientProvider client={queryClient}>
+<FeedScreen />
+</QueryClientProvider>
+*/
