@@ -10,6 +10,7 @@ import {
 import CardItem from "../components/cardItem";
 import { ActivityIndicator, Colors } from "react-native-paper";
 import { useStarships } from "../lib/useStartShip";
+import BottomTabNavigator from "../navigation/BottomTabNavigator";
 
 const FeedScreen = ({ navigation }: any) => {
   const { data, error, isLoading } = useStarships();

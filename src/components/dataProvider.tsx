@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, createContext, useContext } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 interface Props {
@@ -7,7 +7,6 @@ interface Props {
 
 const DataProvider = ({ children }: Props) => {
   const queryClient = new QueryClient();
-
   return (
     <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
   );

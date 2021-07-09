@@ -5,6 +5,7 @@ import StorybookUIRoot from "./storybook";
 import { NavigationContainer } from "@react-navigation/native";
 import AppLayout from "./AppLayout";
 import Navigator from "./src/navigation/Navigator";
+import LoginNavigator from "./src/navigation/LoginNavigator";
 
 //const SHOW_STORYBOOK = false;
 
@@ -12,11 +13,11 @@ export default function App() {
   return (
     <ProviderOffline>
       <DataProvider>
-      {/* <AppLayout title={"StarShip"}> */}
-          <NavigationContainer>
-            <Navigator />
-          </NavigationContainer>
-          {/*</AppLayout>*/}
+        {/* <AppLayout title={"StarShip"}> */}
+
+        <Navigator />
+
+        {/*</AppLayout>*/}
       </DataProvider>
     </ProviderOffline>
   );

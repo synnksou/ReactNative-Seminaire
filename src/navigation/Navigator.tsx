@@ -1,54 +1,16 @@
-import React from "react";
-import { createStackNavigator } from "@react-navigation/stack";
-import { LoginScreen, TermScreen } from "../screens";
-import FeedScreen from "../screens/FeedScreen";
-import { AppRoute } from "./AppRoute";
-import StarshipDetailScreen from "../screens/StarshipDetailScreen";
-const Stack = createStackNavigator();
+import React, { useState, useContext } from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import RootNavigator from "./RootNavigator";
+import LoginNavigator from "./LoginNavigator";
+import BottomTabNavigator from "./BottomTabNavigator";
 
 const Navigator = () => {
+  const [isSignedIn, setIsSignedIn] = useState(true);
+
   return (
-    <Stack.Navigator mode={"modal"} initialRouteName={AppRoute.LOGIN_SCREEN}>
-      <Stack.Screen
-        options={{
-          headerStyle: {
-            backgroundColor: "#7950f2",
-            shadowColor: "transparent",
-          },
-          headerShown: false,
-        }}
-        name={AppRoute.LOGIN_SCREEN}
-        component={LoginScreen}
-      />
-      <Stack.Screen name={AppRoute.TERMS_SCREEN} component={TermScreen} />
-      <Stack.Screen
-        options={{
-          title: "Feed",
-          headerStyle: {
-            backgroundColor: "#7950f2",
-            shadowColor: "transparent",
-          },
-          headerTitleStyle: {
-            color: "white",
-          },
-        }}
-        name={AppRoute.STARSHIP_FEED_SCREEN}
-        component={FeedScreen}
-      />
-      <Stack.Screen
-        options={{
-          headerStyle: {
-            backgroundColor: "#7950f2",
-            shadowColor: "transparent",
-          },
-          headerTitleStyle: {
-            color: "white",
-          },
-        }}
-        name={AppRoute.STARSHIP_DETAIL_SCREEN}
-        component={StarshipDetailScreen}
-      />
-    </Stack.Navigator>
+    <NavigationContainer>
+      {isSignedIn ? <RootNavigator /> : <LoginNavigator />}
+    </NavigationContainer>
   );
 };
 

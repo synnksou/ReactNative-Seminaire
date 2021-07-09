@@ -2,7 +2,7 @@ import * as React from "react";
 import { Text, View, StyleSheet } from "react-native";
 import { TextInput, Button } from "react-native-paper";
 import { AppRoute } from "./../navigation/AppRoute";
-const App = ({props , navigation}: any ) => {
+const App = ({ props, navigation }: any) => {
   const [email, setEmail] = React.useState("");
   const [pass, setPass] = React.useState("");
 
@@ -34,17 +34,10 @@ const App = ({props , navigation}: any ) => {
         keyboardType="default"
       />
 
-      <Button
-        style={{ margin: 10 }}
-        mode="contained"
-        onPress={handleFeed}
-      >
+      <Button style={{ margin: 10 }} mode="contained" onPress={handleFeed}>
         Login
       </Button>
-      <Button
-        mode="text"
-        onPress={handleTerms}
-      >
+      <Button mode="text" onPress={handleTerms}>
         Voir les conditions d'utilisations
       </Button>
     </View>
